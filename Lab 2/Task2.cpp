@@ -2,18 +2,18 @@
 using namespace std;
 
 int main() {
-    // Enum representing employee types
+
     enum etype { laborer, secretary, manager, accountant, executive, researcher };
     
-    char letter;  // Variable to store user input for first letter
-    etype employee;  // Variable to store the enum value
+    char letter;  
+    etype employee;
     
-    // Prompt the user to enter the first letter of employee type
+    
     cout << "Enter employee type (first letter only)\n";
     cout << "(laborer, secretary, manager, accountant, executive, researcher): ";
     cin >> letter;
     
-    // Use a switch statement to determine the input
+
     switch (letter) {
         case 'l': employee = laborer; break;
         case 's': employee = secretary; break;
@@ -24,7 +24,7 @@ int main() {
         default: cout << "Invalid input.\n"; return 1;
     }
     
-    // Use another switch statement to output the corresponding employee type
+
     cout << "Employee type is ";
     switch (employee) {
         case laborer: cout << "laborer."; break;
