@@ -3,8 +3,8 @@ using namespace std;
 
 class RationalNumber {
     private:
-        int erator;
-        int denominator
+        int numerator;
+        int denominator;
 
     public:
         void assign(int num,int denom) { 
@@ -19,7 +19,7 @@ class RationalNumber {
             }
         }
 
-        float convert {
+        float convert() {
             return numerator/denominator;
         }
 
