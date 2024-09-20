@@ -20,7 +20,7 @@ class RationalNumber {
         }
 
         float convert() {
-            return numerator/denominator;
+            return (float)numerator/(float)denominator;
         }
 
         void invert(){
