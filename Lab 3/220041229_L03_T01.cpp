@@ -16,5 +16,11 @@ class Temperature {
 
 
 int main(){
-
+    Temperature temp;
+    temp.setIncrementStep(5);
+    temp.increment();
+    cout << "Temperature: " << temp.getTemperature() << endl;
+    temp.resetTemperature();
+    cout << "Temperature after reset: " << temp.getTemperature() << endl;
+    return 0;
 }

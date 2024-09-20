@@ -43,5 +43,11 @@ class RationalNumber {
 
 
 int main(){
-
+    RationalNumber rn;
+    rn.assign(3, 4);
+    rn.print();
+    cout << "Decimal form: " << rn.convert() << endl;
+    rn.invert();
+    rn.print();
+    return 0;
 }

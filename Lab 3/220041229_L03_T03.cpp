@@ -23,8 +23,9 @@ class Bank_Account {
                 account_type = "Current";
             else if (type == "Savings") 
                 account_type = "Savings";
-            else 
+            else {
                 cout << "Invalid account type" << endl;
+                return;}
         }
 
         
@@ -60,6 +61,13 @@ class Bank_Account {
 };
 
 int main(){
-
+    Bank_Account account;
+    account.customerDetails("Alice", 987654);
+    account.accountType("Savings");
+    account.deposit(2000);
+    account.display();
+    account.withdraw(1500);
+    account.displayBalance();
+    return 0;
 }
     
