@@ -4,6 +4,7 @@ using namespace std;
 class BankAccount {
     private:
         static int totalAccounts;
+        static int totalAccountPresent;
         static double totalTaxCollected;
 
         float account_number;
@@ -16,12 +17,13 @@ class BankAccount {
         BankAccount(float account_number, string holder_name, float balance, float min_balance)
             : account_number(account_number), holder_name(holder_name), account_type("N/A"), balance(balance), min_balance(min_balance) {
             totalAccounts++;
+            totalAccountPresent++;
         }
 
         ~BankAccount() {
             cout << "Account of Mr./Ms. " << holder_name << " with account no " 
                  << account_number << " is destroyed with a balance of BDT " << balance << endl;
-            totalAccounts--;
+            totalAccountPresent--;
         }
 
         void accountType(string type) {
@@ -71,7 +73,8 @@ class BankAccount {
         }
 
         static void display_stat() {
-            cout << "Total number of Bank Accounts: " << totalAccounts << endl;
+            cout << "Total number of Bank Accounts Created: " << totalAccounts << endl;
+            cout << "Total number of Bank Accounts Present: " << totalAccountPresent << endl;
             cout << "Total Amount of Tax collected: " << totalTaxCollected << endl;
         }
 
@@ -81,6 +84,7 @@ class BankAccount {
 };
 
 int BankAccount::totalAccounts = 0;
+int BankAccount::totalAccountPresent = 0;
 double BankAccount::totalTaxCollected = 0.0;
 
 int main() {
@@ -105,6 +109,8 @@ int main() {
     BankAccount larger = BankAccount::Larger(acc1, acc2);
     cout << "The account with the larger balance belongs to: "<<endl;
     larger.display();
+
+    acc1.~BankAccount();
 
     BankAccount::display_stat();
 
