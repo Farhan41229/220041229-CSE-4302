@@ -103,7 +103,7 @@ int main() {
     acc2.showBalance();
 
     BankAccount larger = BankAccount::Larger(acc1, acc2);
-    cout << "The account with the larger balance belongs to: \n";
+    cout << "The account with the larger balance belongs to: "<<endl;
     larger.display();
 
     BankAccount::display_stat();
