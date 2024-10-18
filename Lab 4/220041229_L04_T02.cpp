@@ -78,7 +78,7 @@ class BankAccount {
             cout << "Total Amount of Tax collected: " << totalTaxCollected << endl;
         }
 
-        static BankAccount Larger(BankAccount &A, BankAccount &B) {
+        static BankAccount Larger(const BankAccount &A, const BankAccount &B) {
             return (A.balance > B.balance) ? A : B;
         }
 };
